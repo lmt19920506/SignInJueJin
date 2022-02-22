@@ -75,5 +75,5 @@ const signTask = () => {
     }, Math.random() * 1000);
   });
 };
-
+pushMsg("test", {});
 signTask();
