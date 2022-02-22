@@ -1,4 +1,5 @@
 const axios = require("axios");
+const schedule = require("node-schedule");
 const { nuggets, pushPlus } = require("./config");
 /**
  * pushplus消息推送，关注wx公众号可以调用他们的接口进行wx消息推送
@@ -64,5 +65,14 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-pushMsg(`测试`, {});
-signRequest(); //签到函数
+//定时触发任务
+const signTask = () => {
+  //每天在6:00-6:10随机签到
+  const rule = schedule.scheduleJob("0 0 6 * * *", () => {
+    setTimeout(() => {
+      signRequest(); //签到函数
+    }, Math.random() * 10 * 60 * 1000);
+  });
+};
+
+signTask();
