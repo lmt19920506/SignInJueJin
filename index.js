@@ -1,6 +1,4 @@
-//需要使用的包文件
 const axios = require("axios");
-//相关参数保存在文件内
 const { nuggets, pushPlus } = require("./config");
 /**
  * pushplus消息推送，关注wx公众号可以调用他们的接口进行wx消息推送
