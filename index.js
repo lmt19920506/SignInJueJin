@@ -65,13 +65,14 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-//定时触发任务
 const signTask = () => {
-  //每天在6:00-6:10随机签到
-  const rule = schedule.scheduleJob("0 0 6 * * *", () => {
+  const rule = new schedule.RecurrenceRule();
+  rule.minute = [9, 10, 11];
+  // "0 0 6 * * *"
+  schedule.scheduleJob(rule, () => {
     setTimeout(() => {
       signRequest(); //签到函数
-    }, Math.random() * 10 * 60 * 1000);
+    }, Math.random() * 1000);
   });
 };
 
