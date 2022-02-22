@@ -33,8 +33,10 @@ const signRequest = async () => {
   if (res && res.data && res.data.err_no === 0) {
     luckDraw();
     luckDip();
+    pushMsg(`掘金签到成功`, res.data.data);
+  } else {
+    pushMsg(`掘金签到失败`, { RES: res.data.err_msg });
   }
-  pushMsg(`掘金签到`, res.data.data);
 };
 /**
  * 抽奖
