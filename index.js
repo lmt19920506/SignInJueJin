@@ -1,9 +1,7 @@
 //需要使用的包文件
 const axios = require("axios");
-const schedule = require("node-schedule");
 //相关参数保存在文件内
 const { nuggets, pushPlus } = require("./config");
-const msg = {};
 /**
  * pushplus消息推送，关注wx公众号可以调用他们的接口进行wx消息推送
  * @param {String} title
@@ -66,15 +64,4 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-/**
- * 定时触发任务
- */
-const signTask = () => {
-  schedule.scheduleJob("0 30 9 * * *", () => {
-    setTimeout(() => {
-      signRequest(); //签到函数
-    }, Math.random() * 60 * 30 * 1000);
-  });
-};
-
-signTask();
+signRequest(); //签到函数
