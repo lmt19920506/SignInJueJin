@@ -66,7 +66,7 @@ const luckDip = async () => {
 };
 
 const signTask = () => {
-  schedule.scheduleJob("0 32 18 * * *", () => {
+  schedule.scheduleJob("0 30 9 * * *", () => {
     signRequest(); //签到函数
   });
 };
