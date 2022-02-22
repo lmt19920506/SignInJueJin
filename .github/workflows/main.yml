@@ -6,7 +6,7 @@ name: SIGNINJUEJIN
 on:
   push:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '6 * * * *'
 
 jobs:
   # This workflow contains a single job called "build"
