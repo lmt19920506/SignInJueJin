@@ -66,10 +66,7 @@ const luckDip = async () => {
 };
 
 const signTask = () => {
-  const rule = new schedule.RecurrenceRule();
-  rule.minute = [28, 30, 32];
-  // "0 0 6 * * *"
-  schedule.scheduleJob(rule, () => {
+  schedule.scheduleJob("0 32 18 * * *", () => {
     signRequest(); //签到函数
   });
 };
