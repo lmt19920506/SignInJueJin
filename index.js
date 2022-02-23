@@ -31,13 +31,11 @@ const signRequest = async () => {
     headers,
   });
   if (res && res.data && res.data.err_no === 0) {
-    const { err_msg } = res.data;
-    luckDraw();
+    pushMsg("JueJin", { RES: 1 });
     luckDip();
-    pushMsg(`掘金签到成功`, { RES: 1 });
+    luckDraw();
   } else {
-    const { err_msg } = res.data;
-    pushMsg(`SignInFailed__JueJin`, { RES: err_msg });
+    pushMsg("signRequest", res.data);
   }
 };
 /**
@@ -50,7 +48,7 @@ const luckDraw = async () => {
     method: `post`,
     headers,
   });
-  pushMsg(`掘金抽奖`, res.data.data);
+  pushMsg("luckDraw", res.data.data);
 };
 
 /**
@@ -63,7 +61,7 @@ const luckDip = async () => {
     method: `post`,
     headers,
   });
-  pushMsg(`掘金沾喜气`, res.data.data);
+  pushMsg("luckDip", res.data.data);
 };
 
 signRequest(); //签到函数
