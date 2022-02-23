@@ -35,8 +35,9 @@ const signRequest = async () => {
     luckDip();
     pushMsg(`掘金签到成功`, res.data.data);
   } else {
-    pushMsg(`SIGNINREEOR`, res.data);
-    pushMsg(`掘金签到失败`, res.data);
+    const { err_msg } = res.data;
+    pushMsg(`SIGNINREEOR`, { RES: 0 });
+    pushMsg(`SIGNINREEOR`, { RES: err_msg });
   }
 };
 /**
