@@ -64,10 +64,4 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-// const signTask = () => {
-//   schedule.scheduleJob("0 30 9 * * *", () => {
-//     signRequest(); //签到函数
-//   });
-// };
-// signTask();
 signRequest(); //签到函数
