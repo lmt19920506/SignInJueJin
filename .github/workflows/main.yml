@@ -6,7 +6,7 @@ name: SIGNINJUEJIN
 on:
   push:
   schedule:
-    - cron: '5 10 * * *'
+    - cron: '50 10 * * *'
 
 jobs:
   build:
