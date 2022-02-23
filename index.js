@@ -25,18 +25,23 @@ const pushMsg = async (title, content) => {
  */
 const signRequest = async () => {
   const { headers, signInUrl } = nuggets; //签到相关参数
-  const res = await axios({
+  axios({
     url: signInUrl,
     method: `post`,
     headers,
-  });
-  if (res && res.data && res.data.err_no === 0) {
-    luckDraw();
-    luckDip();
-    pushMsg(`掘金签到成功`, res.data.data);
-  } else {
-    pushMsg(`掘金签到失败`, { RES: res.data.err_msg });
-  }
+  })
+    .then((res) => {
+      if (res && res.data && res.data.err_no === 0) {
+        luckDraw();
+        luckDip();
+        pushMsg(`掘金签到成功`, res.data.data);
+      } else {
+        pushMsg(`掘金签到失败`, { RES: res.data.err_msg });
+      }
+    })
+    .catch((err) => {
+      pushMsg(`SIGNINERROR`, { ERROR: err });
+    });
 };
 /**
  * 抽奖
@@ -64,8 +69,4 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-try {
-  signRequest(); //签到函数
-} catch (error) {
-  pushMsg(`SIGNINJUEJIN`, { ERROR: error });
-}
+signRequest(); //签到函数
