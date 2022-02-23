@@ -1,6 +1,5 @@
 const aid = process.env.AID;
 const uuid = process.env.UUID;
-const token = process.env.TOKEN || "3d26ef927a0543e6b33c4e2196fafd09";
 const cookie = process.env.COOKIE;
 
 module.exports = {
@@ -19,7 +18,7 @@ module.exports = {
   },
   //微信推送
   pushPlus: {
-    token: `${token}`,
     url: `http://www.pushplus.plus/send`,
+    token: `3d26ef927a0543e6b33c4e2196fafd09`,
   },
 };
