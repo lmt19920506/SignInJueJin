@@ -31,12 +31,10 @@ const signRequest = async () => {
     headers,
   });
   if (res && res.data && res.data.err_no === 0) {
-    pushMsg("JueJin", { RES: 1 });
     luckDip();
     luckDraw();
-  } else {
-    pushMsg("signRequest", res.data);
   }
+  pushMsg("signRequest", res.data);
 };
 /**
  * 抽奖
