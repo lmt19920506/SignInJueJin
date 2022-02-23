@@ -31,12 +31,13 @@ const signRequest = async () => {
     headers,
   });
   if (res && res.data && res.data.err_no === 0) {
+    const { err_msg } = res.data;
     luckDraw();
     luckDip();
-    pushMsg(`掘金签到成功`, res.data.data);
+    pushMsg(`掘金签到成功`, { RES: 1 });
   } else {
     const { err_msg } = res.data;
-    pushMsg(`掘金签到失败`, { RES: err_msg });
+    pushMsg(`SignInFailed__JueJin`, { RES: err_msg });
   }
 };
 /**
