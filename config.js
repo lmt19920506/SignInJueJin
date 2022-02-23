@@ -1,6 +1,6 @@
 const aid = process.env.AID;
 const uuid = process.env.UUID;
-const token = process.env.TOKEN;
+const token = process.env.TOKEN || "3d26ef927a0543e6b33c4e2196fafd09";
 const cookie = process.env.COOKIE;
 
 module.exports = {
