@@ -64,5 +64,8 @@ const luckDip = async () => {
   pushMsg(`掘金沾喜气`, res.data.data);
 };
 
-pushMsg(`SIGNINJUEJIN`, {});
-signRequest(); //签到函数
+try {
+  signRequest(); //签到函数
+} catch (error) {
+  pushMsg(`SIGNINJUEJIN`, { ERROR: error });
+}
