@@ -11,16 +11,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.17.0] #指定node版本
     steps:
-      - uses: actions/checkout@v1
-      - name: 'Install node'
-        uses: actions/setup-node@v1
-      - name: 'Install NPM dependencies'
-        run: npm install
-      - name: 'Run code'
-        run: node index.js
-        env:
-          AID: ${{ secrets.AID }}
-          UUID: ${{ secrets.UUID }}
-          COOKIE: ${{ secrets.COOKIE }}
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }} #使用action安装node环境
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: 'Install NPM dependencies'
+      run: npm install
+    - name: 'Run code'
+      run: node index.js
+      env:
+        AID: ${{ secrets.AID }}
+        UUID: ${{ secrets.UUID }}
+        COOKIE: ${{ secrets.COOKIE }}
 
