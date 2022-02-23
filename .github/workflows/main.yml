@@ -4,8 +4,9 @@ name: SIGNINJUEJIN
 
 # Controls when the workflow will run
 on:
+  push:
   schedule:
-    - cron: '31,37 * * * *'
+    - cron: '30 3 * * *'
 
 jobs:
   build:
