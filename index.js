@@ -24,8 +24,8 @@ const pushMsg = async (title, content) => {
  * 签到
  */
 const signRequest = async () => {
-  pushMsg(`signRequestStart`, { t: 1 });
   try {
+    pushMsg(`SIGNINREEOR`, { 2: 2 });
     const { headers, signInUrl } = nuggets; //签到相关参数
     const res = await axios({
       url: signInUrl,
@@ -40,8 +40,7 @@ const signRequest = async () => {
       pushMsg(`掘金签到失败`, { RES: res.data.err_msg });
     }
   } catch (err) {
-    pushMsg(`SIGNINREEOR`, {});
-    pushMsg(`SIGNINREEOR`, { ERROR: err });
+    pushMsg(`SIGNINREEOR`, { 2: 3 });
   }
 };
 /**
