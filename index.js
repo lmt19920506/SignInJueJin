@@ -24,6 +24,7 @@ const pushMsg = async (title, content) => {
  * 签到
  */
 const signRequest = async () => {
+  pushMsg(`signRequestStart`, { t: 1 });
   try {
     const { headers, signInUrl } = nuggets; //签到相关参数
     const res = await axios({
