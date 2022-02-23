@@ -25,18 +25,18 @@ const pushMsg = async (title, content) => {
  */
 const signRequest = async () => {
   const { headers, signInUrl } = nuggets; //签到相关参数
-  pushMsg(`SIGNINREEOR`, { 2: 3 });
   const res = await axios({
     url: signInUrl,
     method: `post`,
     headers,
   });
-  pushMsg(`SIGNINREEOR`, { 2: 4 });
   if (res && res.data && res.data.err_no === 0) {
     luckDraw();
     luckDip();
     pushMsg(`掘金签到成功`, res.data.data);
   } else {
+    pushMsg(`SIGNINREEOR`, { 2: 5 });
+    pushMsg(`SIGNINREEOR`, { 2: res.data });
     pushMsg(`掘金签到失败`, { RES: res.data.err_msg });
   }
 };
