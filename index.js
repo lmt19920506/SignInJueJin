@@ -1,5 +1,4 @@
 const axios = require("axios");
-const schedule = require("node-schedule");
 const { nuggets, pushPlus } = require("./config");
 /**
  * pushplus消息推送，关注wx公众号可以调用他们的接口进行wx消息推送
