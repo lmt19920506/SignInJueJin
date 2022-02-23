@@ -6,9 +6,9 @@ const cookie = process.env.COOKIE;
 module.exports = {
   //掘金
   nuggets: {
-    signInUrl: `https://api.juejin.cn/growth_api/v1/check_in`, //签到接口
-    drawUrl: `https://api.juejin.cn/growth_api/v1/lottery/draw`, //抽奖接口
-    dipUrl: `https://api.juejin.cn/growth_api/v1/lottery_lucky/dip_lucky?aid=${aid}2608&uuid=${uuid}`, //免费抽奖
+    signInUrl: `https://api.juejin.cn/growth_api/v1/check_in`, //签到
+    drawUrl: `https://api.juejin.cn/growth_api/v1/lottery/draw`, //抽奖
+    dipUrl: `https://api.juejin.cn/growth_api/v1/lottery_lucky/dip_lucky?aid=${aid}2608&uuid=${uuid}`, //沾喜气
     headers: {
       cookie: `${cookie}`,
       Referer: "https://juejin.cn/",
