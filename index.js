@@ -36,8 +36,7 @@ const signRequest = async () => {
     pushMsg(`掘金签到成功`, res.data.data);
   } else {
     const { err_msg } = res.data;
-    pushMsg(`SIGNINREEOR`, { RES: 0 });
-    pushMsg(`SIGNINREEOR`, { RES: err_msg });
+    pushMsg(`掘金签到失败`, { RES: err_msg });
   }
 };
 /**
