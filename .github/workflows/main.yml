@@ -5,7 +5,7 @@ name: SIGNINJUEJIN
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '30 3 * * *'
+    - cron: '21 3 * * *'
 
 jobs:
   build:
