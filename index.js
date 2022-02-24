@@ -53,12 +53,14 @@ const luckDraw = async () => {
  * 沾喜气
  */
 const luckDip = async () => {
+  pushMsg("luckDip", "start");
   const { headers, dipUrl } = nuggets; //抽奖相关参数
   const res = await axios({
     url: dipUrl,
     method: `post`,
     headers,
   });
+  pushMsg("luckDip", "done");
   pushMsg("luckDip", res.data.data);
 };
 
