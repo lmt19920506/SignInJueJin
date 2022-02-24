@@ -4,7 +4,6 @@ name: SIGNINJUEJIN
 
 # Controls when the workflow will run
 on:
-  push:
   schedule:
     - cron: '30 3 * * *'
 
@@ -28,4 +27,5 @@ jobs:
         AID: ${{ secrets.AID }}
         UUID: ${{ secrets.UUID }}
         COOKIE: ${{ secrets.COOKIE }}
+        HISTORYID: ${{ secrets.HISTORYID }}
 
