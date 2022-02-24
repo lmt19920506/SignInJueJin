@@ -1,6 +1,7 @@
 const aid = process.env.AID;
 const uuid = process.env.UUID;
 const cookie = process.env.COOKIE;
+const wx_token = process.env.WXTOKEN;
 
 module.exports = {
   //掘金
@@ -18,7 +19,7 @@ module.exports = {
   },
   //微信推送
   pushPlus: {
+    token: `${wx_token}`,
     url: `http://www.pushplus.plus/send`,
-    token: `3d26ef927a0543e6b33c4e2196fafd09`,
   },
 };
