@@ -5,6 +5,8 @@ name: SIGNINJUEJIN
 # Controls when the workflow will run
 on:
   push:
+    branches:
+      - 'main'
   schedule:
     - cron: '49 3 * * *'
 
