@@ -27,5 +27,6 @@ jobs:
         AID: ${{ secrets.AID }}
         UUID: ${{ secrets.UUID }}
         COOKIE: ${{ secrets.COOKIE }}
+        WXTOKEN: ${{ secrets.WXTOKEN }}
         HISTORYID: ${{ secrets.HISTORYID }}
 
