@@ -6,9 +6,9 @@ name: SIGNINJUEJIN
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
   schedule:
-    - cron: '49 3 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
