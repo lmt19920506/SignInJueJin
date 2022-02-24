@@ -40,13 +40,11 @@ const signRequest = async () => {
  * 抽奖
  */
 const luckDraw = async () => {
-  const data = { lottery_history_id: process.env.HISTORYID };
   const { headers, drawUrl } = nuggets; //抽奖相关参数
   const res = await axios({
     url: drawUrl,
     method: `post`,
     headers,
-    data,
   });
   pushMsg("luckDraw", res.data.data);
 };
@@ -55,11 +53,13 @@ const luckDraw = async () => {
  * 沾喜气
  */
 const luckDip = async () => {
+  const data = { lottery_history_id: process.env.HISTORYID };
   const { headers, dipUrl } = nuggets; //抽奖相关参数
   const res = await axios({
     url: dipUrl,
     method: `post`,
     headers,
+    data,
   });
   pushMsg("luckDip", res.data.data);
 };
