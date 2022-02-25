@@ -24,7 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: 'Install NPM dependencies'
       run: npm install
-    - name: 'Run On Master Branch'
+    - name: 'Run On Master'
       run: node index.js
       env:
         AID: ${{ secrets.AID }}
